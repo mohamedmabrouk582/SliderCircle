@@ -27,6 +27,7 @@ public abstract class SliderView {
     protected String imageUrl;
     protected ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER_CROP;
     protected Context context;
+    protected Bitmap imageBitmap;
 
 
     abstract public View getView();
@@ -58,6 +59,10 @@ public abstract class SliderView {
             throw new IllegalStateException("Can't set multiple images");
         }
         this.imageUrl = imageUrl;
+    }
+
+    public void setImageBitmap(Bitmap imageBitmap){
+        this.imageBitmap=imageBitmap;
     }
 
     public void setImageByte(byte[] imageByte) {
@@ -95,12 +100,16 @@ public abstract class SliderView {
 
     public void setImage(ImageView imageView){
         try {
-            imageView.setScaleType(getScaleType());
+           // imageView.setScaleType(getScaleType());
             if (imageUrl != null) {
                 Glide.with(context).load(imageUrl).into(imageView);
             }
             if (imageRes != 0) {
                 Glide.with(context).asDrawable().load(imageRes).into(imageView);
+            }
+
+            if (imageBitmap!=null){
+                imageView.setImageBitmap(imageBitmap);
             }
         } catch (Exception exception) {
             Log.d("Exception", exception.getMessage());

@@ -6,12 +6,15 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.bumptech.glide.Glide;
 import com.mabrouk.slideroval.DefaultSliderView;
 import com.mabrouk.slideroval.IndicatorAnimations;
 import com.mabrouk.slideroval.IndicatorView.animation.type.SlideAnimation;
 import com.mabrouk.slideroval.ScrollTimeType;
 import com.mabrouk.slideroval.SliderAnimations;
 import com.slidercircle.databinding.ActivityMainBinding;
+
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
    private ActivityMainBinding layoutBinding;
@@ -25,7 +28,14 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i <10 ; i++) {
             DefaultSliderView sliderView=new DefaultSliderView(this);
-            sliderView.setImageUrl("https://shamelq8.com/uploads/advertising/uprCocfdqVljWrnLIRCUD2cRu.jpg");
+            try {
+                sliderView.setImageBitmap(Glide.with(this).asBitmap().load("https://shamelq8.com/uploads/advertising/uprCocfdqVljWrnLIRCUD2cRu.jpg").submit().get());
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+          //  sliderView.setImageUrl("https://shamelq8.com/uploads/advertising/uprCocfdqVljWrnLIRCUD2cRu.jpg");
             sliderView.setDescription("huhuhhhhhhhhhhhhhhhhygygygy");
             layoutBinding.sliderLayout.addSliderView(sliderView);
         }
