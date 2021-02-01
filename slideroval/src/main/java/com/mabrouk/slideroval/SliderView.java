@@ -97,10 +97,10 @@ public abstract class SliderView {
         try {
             imageView.setScaleType(getScaleType());
             if (imageUrl != null) {
-                Glide.with(context).load(imageUrl).into(imageView);
+                Glide.with(context).asDrawable().load(imageUrl).into(imageView);
             }
             if (imageRes != 0) {
-                Glide.with(context).load(imageRes).into(imageView);
+                Glide.with(context).asDrawable().load(imageRes).into(imageView);
             }
         } catch (Exception exception) {
             Log.d("Exception", exception.getMessage());

@@ -21,15 +21,17 @@ public class DefaultSliderView extends SliderView {
         @SuppressLint("InflateParams")
         View v = LayoutInflater.from(context).inflate(R.layout.image_slider_layout_item, null, true);
         ImageView autoSliderImage = v.findViewById(R.id.iv_auto_image_slider);
-        TextView tv_description = v.findViewById(R.id.tv_auto_image_slider);
-        tv_description.getBackground();
-        if (descriptionTextSize != 1) {
-            tv_description.setTextSize(descriptionTextSize);
-        }
-        tv_description.setTextColor(Color.parseColor(descriptionTextColor));
-        tv_description.setText(getDescription());
-        if (descriptionTextFont!=null)
-        tv_description.setTypeface(descriptionTextFont);
+        try {
+            TextView tv_description = v.findViewById(R.id.tv_auto_image_slider);
+            tv_description.getBackground();
+            if (descriptionTextSize != 1) {
+                tv_description.setTextSize(descriptionTextSize);
+            }
+            tv_description.setTextColor(Color.parseColor(descriptionTextColor));
+            tv_description.setText(getDescription());
+            if (descriptionTextFont!=null)
+                tv_description.setTypeface(descriptionTextFont);
+        }catch (Exception e){}
         bindViewData(v, autoSliderImage);
         return v;
     }
