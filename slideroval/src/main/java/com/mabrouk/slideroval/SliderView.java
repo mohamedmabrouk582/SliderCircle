@@ -97,7 +97,7 @@ public abstract class SliderView {
         try {
             imageView.setScaleType(getScaleType());
             if (imageUrl != null) {
-                Glide.with(context).asDrawable().load(imageUrl).into(imageView);
+                Glide.with(context).load(imageUrl).into(imageView);
             }
             if (imageRes != 0) {
                 Glide.with(context).asDrawable().load(imageRes).into(imageView);
