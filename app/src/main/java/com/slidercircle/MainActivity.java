@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i <10 ; i++) {
             DefaultSliderView sliderView=new DefaultSliderView(this);
-            sliderView.setImageUrl("https://image.tmdb.org/t/p/w185//hwpqQBzL3vVSppnMIINc2RCHXgn.jpg");
+            sliderView.setImageUrl("https://shamelq8.com/uploads/advertising/uprCocfdqVljWrnLIRCUD2cRu.jpg");
             sliderView.setDescription("huhuhhhhhhhhhhhhhhhhygygygy");
             layoutBinding.sliderLayout.addSliderView(sliderView);
         }
