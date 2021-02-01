@@ -100,7 +100,7 @@ public abstract class SliderView {
                 Glide.with(context).load(imageUrl).into(imageView);
             }
             if (imageRes != 0) {
-                Glide.with(context).asDrawable().load(imageRes).into(imageView);
+                Glide.with(context).load(imageRes).into(imageView);
             }
         } catch (Exception exception) {
             Log.d("Exception", exception.getMessage());
