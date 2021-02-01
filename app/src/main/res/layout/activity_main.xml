@@ -12,6 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:indicator_radius="4dp"
+        app:piv_inside="false"
+        app:indector_selectedColor="@color/colorPrimary"
+        app:indector_unselectedColor="@color/colorAccent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

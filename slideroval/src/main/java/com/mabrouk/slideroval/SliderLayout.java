@@ -2,6 +2,7 @@ package com.mabrouk.slideroval;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -57,7 +58,9 @@ public class SliderLayout extends FrameLayout implements CircularSliderHandle.Cu
     int loopCount,currentLoopCount;
     private SliderListener mListener;
     private boolean calledBefore;
-
+    private boolean isInside;
+    private int selectedColor;
+    private int unSelectedColor;
 
     public SliderLayout(Context context) {
         super(context);
@@ -181,7 +184,7 @@ public class SliderLayout extends FrameLayout implements CircularSliderHandle.Cu
 
     }
 
-    public void setCustomSliderTransformAnimation(ViewPager.PageTransformer animation) {
+    private void setCustomSliderTransformAnimation(ViewPager.PageTransformer animation) {
         mSliderPager.setPageTransformer(false, animation);
     }
 
@@ -249,10 +252,28 @@ public class SliderLayout extends FrameLayout implements CircularSliderHandle.Cu
         mSliderPager = view.findViewById(R.id.vp_slider_layout);
         pagerIndicator = view.findViewById(R.id.pager_indicator);
         pagerIndicator.setDynamicCount(true);
+
+        selectedColor=ta.getColor(R.styleable.SliderLayout_indector_selectedColor,0);
+        unSelectedColor=ta.getColor(R.styleable.SliderLayout_indector_unselectedColor,0);
         indicatorRadius=(int)ta.getDimension(R.styleable.SliderLayout_indicator_radius,5);
         autoScrolling=ta.getBoolean(R.styleable.SliderLayout_auto_cycle,true);
          indicatorVaisable=ta.getBoolean(R.styleable.SliderLayout_indicator_visiabilty,true);
          loopCount=ta.getInt(R.styleable.SliderLayout_loop_count,-1);
+         isInside=ta.getBoolean(R.styleable.SliderLayout_piv_inside,false);
+         if (isInside){
+             LayoutParams params = new LayoutParams(
+                     LayoutParams.MATCH_PARENT,
+                     LayoutParams.MATCH_PARENT
+             );
+             params.setMargins(0, 0, 0, 100);
+             mSliderPager.setLayoutParams(params);
+         }
+         if (selectedColor!=0){
+             pagerIndicator.setSelectedColor(selectedColor);
+         }
+         if (unSelectedColor!=0){
+             pagerIndicator.setUnselectedColor(unSelectedColor);
+         }
         setPagerIndicatorVisibility(indicatorVaisable);
         mFlippingPagerAdapter = new SliderAdapter(context);
 

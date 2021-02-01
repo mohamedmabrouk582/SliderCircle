@@ -51,6 +51,9 @@
         <attr name="indicator_margin" format="dimension"/>
         <attr name="auto_cycle" format="boolean"/>
         <attr name="loop_count" format="integer"/>
+        <attr name="indector_unselectedColor" format="color" />
+        <attr name="indector_selectedColor" format="color" />
+        <attr name="piv_inside" format="boolean" />
         <attr name="loop_type">
             <enum name="infinity" value="0"/>
             <enum name="count" value="1"/>
