@@ -36,6 +36,7 @@ public class DefaultSliderView extends SliderView {
         return v;
     }
 
+
     @Override
     protected void bindViewData(View v, View autoSliderImage) {
         final DefaultSliderView con = this;
