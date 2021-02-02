@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.DrawableRes;
@@ -30,7 +31,7 @@ public abstract class SliderView {
     protected Bitmap imageBitmap;
 
 
-    abstract public View getView();
+    abstract public View getView(ViewGroup container);
 
     protected abstract void bindViewData(View v, ImageView autoSliderImage);
 

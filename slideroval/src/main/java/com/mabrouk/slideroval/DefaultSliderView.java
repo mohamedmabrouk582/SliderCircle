@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,9 +18,9 @@ public class DefaultSliderView extends SliderView {
     private Typeface descriptionTextFont;
 
     @Override
-    public View getView() {
+    public View getView(ViewGroup container) {
         @SuppressLint("InflateParams")
-        View v = LayoutInflater.from(context).inflate(R.layout.image_slider_layout_item, null, false);
+        View v = LayoutInflater.from(container.getContext()).inflate(R.layout.image_slider_layout_item, container, false);
         ImageView autoSliderImage =  v.findViewById(R.id.iv_auto_image_slider);
         try {
             TextView tv_description = v.findViewById(R.id.tv_auto_image_slider);

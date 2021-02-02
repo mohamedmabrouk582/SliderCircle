@@ -52,7 +52,7 @@ class SliderAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         SliderView imageSliderView = sliderViews.get(position);
-        View v = imageSliderView.getView();
+        View v = imageSliderView.getView(container);
         container.addView(v);
         return v;
     }
