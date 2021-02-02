@@ -28,14 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i <10 ; i++) {
             DefaultSliderView sliderView=new DefaultSliderView(this);
-            try {
-                sliderView.setImageBitmap(Glide.with(this).asBitmap().load("https://shamelq8.com/uploads/advertising/uprCocfdqVljWrnLIRCUD2cRu.jpg").submit().get());
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-          //  sliderView.setImageUrl("https://shamelq8.com/uploads/advertising/uprCocfdqVljWrnLIRCUD2cRu.jpg");
+            sliderView.setImageUrl("https://shamelq8.com/uploads/advertising/uprCocfdqVljWrnLIRCUD2cRu.jpg");
             sliderView.setDescription("huhuhhhhhhhhhhhhhhhhygygygy");
             layoutBinding.sliderLayout.addSliderView(sliderView);
         }

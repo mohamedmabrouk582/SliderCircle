@@ -20,7 +20,7 @@ public class DefaultSliderView extends SliderView {
     public View getView() {
         @SuppressLint("InflateParams")
         View v = LayoutInflater.from(context).inflate(R.layout.image_slider_layout_item, null, true);
-        ImageView autoSliderImage = (ImageView) v.findViewById(R.id.iv_auto_image_slider);
+        ImageView autoSliderImage =  v.findViewById(R.id.iv_auto_image_slider);
         try {
             TextView tv_description = v.findViewById(R.id.tv_auto_image_slider);
             tv_description.getBackground();
@@ -38,7 +38,7 @@ public class DefaultSliderView extends SliderView {
 
 
     @Override
-    protected void bindViewData(View v, View autoSliderImage) {
+    protected void bindViewData(View v, ImageView autoSliderImage) {
         final DefaultSliderView con = this;
 
         v.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +49,7 @@ public class DefaultSliderView extends SliderView {
                 }
             }
         });
-        setImage((ImageView)autoSliderImage);
+        setImage(autoSliderImage);
     }
 
     public DefaultSliderView(Context context) {

@@ -32,7 +32,7 @@ public abstract class SliderView {
 
     abstract public View getView();
 
-    protected abstract void bindViewData(View v, View autoSliderImage);
+    protected abstract void bindViewData(View v, ImageView autoSliderImage);
 
     protected   SliderView(Context context) {
         this.context = context;
