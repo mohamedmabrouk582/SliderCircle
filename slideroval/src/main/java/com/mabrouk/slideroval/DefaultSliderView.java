@@ -19,7 +19,7 @@ public class DefaultSliderView extends SliderView {
     @Override
     public View getView() {
         @SuppressLint("InflateParams")
-        View v = LayoutInflater.from(context).inflate(R.layout.image_slider_layout_item, null, true);
+        View v = LayoutInflater.from(context).inflate(R.layout.image_slider_layout_item, null, false);
         ImageView autoSliderImage =  v.findViewById(R.id.iv_auto_image_slider);
         try {
             TextView tv_description = v.findViewById(R.id.tv_auto_image_slider);
