@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -54,6 +55,7 @@ public class SliderLayout extends FrameLayout implements CircularSliderHandle.Cu
     private Timer flippingTimer;
     private boolean autoScrolling = true;
     private int indicatorRadius=5;
+    private int indicator_margin;
     boolean indicatorVaisable;
     int loopCount,currentLoopCount;
     private SliderListener mListener;
@@ -257,9 +259,22 @@ public class SliderLayout extends FrameLayout implements CircularSliderHandle.Cu
         unSelectedColor=ta.getColor(R.styleable.SliderLayout_indector_unselectedColor,0);
         indicatorRadius=(int)ta.getDimension(R.styleable.SliderLayout_indicator_radius,5);
         autoScrolling=ta.getBoolean(R.styleable.SliderLayout_auto_cycle,true);
+        indicator_margin=(int)ta.getDimension(R.styleable.SliderLayout_indicator_margin_bottom,0);
          indicatorVaisable=ta.getBoolean(R.styleable.SliderLayout_indicator_visiabilty,true);
          loopCount=ta.getInt(R.styleable.SliderLayout_loop_count,-1);
          isInside=ta.getBoolean(R.styleable.SliderLayout_piv_inside,false);
+
+         if (indicator_margin>0){
+             LayoutParams params = new LayoutParams(
+                     LayoutParams.WRAP_CONTENT,
+                     LayoutParams.WRAP_CONTENT
+             );
+
+             params.gravity = Gravity.CENTER_HORIZONTAL|Gravity.BOTTOM;
+             params.setMargins(0, 0, 0, indicator_margin);
+             pagerIndicator.setLayoutParams(params);
+         }
+
          if (isInside){
              LayoutParams params = new LayoutParams(
                      LayoutParams.MATCH_PARENT,

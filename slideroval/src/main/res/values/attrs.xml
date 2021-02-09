@@ -48,7 +48,7 @@
     <declare-styleable name="SliderLayout">
         <attr name="indicator_radius" format="dimension"/>
         <attr name="indicator_visiabilty" format="boolean"/>
-        <attr name="indicator_margin" format="dimension"/>
+        <attr name="indicator_margin_bottom" format="dimension"/>
         <attr name="auto_cycle" format="boolean"/>
         <attr name="loop_count" format="integer"/>
         <attr name="indector_unselectedColor" format="color" />
