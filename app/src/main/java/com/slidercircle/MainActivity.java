@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
         layoutBinding.sliderLayout.setSliderTransformAnimation(SliderAnimations.CUBEINROTATIONTRANSFORMATION);
 
         for (int i = 0; i <10 ; i++) {
-            DefaultSliderView sliderView=new DefaultSliderView(this);
+            SliderItem sliderView=new SliderItem();
             sliderView.setImageUrl("https://shamelq8.com/uploads/advertising/uprCocfdqVljWrnLIRCUD2cRu.jpg");
-            sliderView.setDescription("huhuhhhhhhhhhhhhhhhhygygygy");
+            sliderView.setDes("huhuhhhhhhhhhhhhhhhhygygygy");
             layoutBinding.sliderLayout.addSliderView(sliderView);
         }
 

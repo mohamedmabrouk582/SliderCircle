@@ -303,7 +303,7 @@ public class SliderLayout extends FrameLayout implements CircularSliderHandle.Cu
         ((SliderAdapter) mFlippingPagerAdapter).removeAllSliderViews();
     }
 
-    public void addSliderView(SliderView sliderView) {
+    public void addSliderView(MainSliderView sliderView) {
         ((SliderAdapter) mFlippingPagerAdapter).addSliderView(sliderView);
         if (pagerIndicator != null && mSliderPager != null) {
             pagerIndicator.setViewPager(mSliderPager);

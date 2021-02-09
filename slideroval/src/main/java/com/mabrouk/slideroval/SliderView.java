@@ -19,7 +19,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public abstract class SliderView {
+public abstract class SliderView extends MainSliderView{
 
     @DrawableRes
     protected int imageRes = 0;
@@ -31,7 +31,6 @@ public abstract class SliderView {
     protected Bitmap imageBitmap;
 
 
-    abstract public View getView(ViewGroup container);
 
     protected abstract void bindViewData(View v, ImageView autoSliderImage);
 

@@ -12,17 +12,17 @@ import java.util.ArrayList;
 class SliderAdapter extends PagerAdapter {
 
     private Context context;
-    private ArrayList<SliderView> sliderViews = new ArrayList<>();
+    private ArrayList<MainSliderView> sliderViews = new ArrayList<>();
 
     SliderAdapter(Context context) {
         this.context = context;
     }
 
-    public void setSliderViews(ArrayList<SliderView> sliderViews) {
+    public void setSliderViews(ArrayList<MainSliderView> sliderViews) {
         this.sliderViews = sliderViews;
     }
 
-    void addSliderView(SliderView view) {
+    void addSliderView(MainSliderView view) {
         sliderViews.add(view);
         notifyDataSetChanged();
     }
@@ -32,7 +32,7 @@ class SliderAdapter extends PagerAdapter {
         notifyDataSetChanged();
     }
 
-    public SliderView getSliderView(int position) {
+    public MainSliderView getSliderView(int position) {
         if (sliderViews.isEmpty() || position >= sliderViews.size()) {
             return null;
         }
@@ -51,7 +51,7 @@ class SliderAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        SliderView imageSliderView = sliderViews.get(position);
+        MainSliderView imageSliderView = sliderViews.get(position);
         View v = imageSliderView.getView(container);
         container.addView(v);
         return v;
